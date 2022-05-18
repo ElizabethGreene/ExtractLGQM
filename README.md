@@ -8,15 +8,16 @@ In the app there is an option where you can share QuickMemos with others.  Selec
 Reverse engineering and extracting .lqm files:
 - The first two bytes of each file is  'PK', indicating it is a .zip file.
 - Expanding the .zip file yields this folder structure:
-│   memoinfo.jlqm
-│   metadata.mtd
-├───audios
-├───drawings
-├───images
-│       20220325034400398d675d83fbbd20045thumb.jpg
-└───videos
-- memoinfo.jlqm is JSON data and contains the memo as text and html
-- images\(Long number that looks like a date in yymmddhhmmss format)(unknownvalue)thumb.jpg appears to be what the memo looked like on the screen of the source device
+- memoinfo.jlqm
+- metadata.mtd
+- ──audios
+- ──drawings
+- ──videos
+- ──images
+- ────20220325034400398d675d83fbbd20045thumb.jpg
+
+memoinfo.jlqm is JSON data and contains the memo as text and html
+images\(Long number that looks like a date in yymmddhhmmss format)(unknownvalue)thumb.jpg appears to be what the memo looked like on the screen of the source device
 
 ExtractLQMs.ps1 is a quick powershell script that extracts the contents of LG QuickMemo+ lqm files into a usable format.  To use it, save all the .lqm files to a folder, open the script, change the input and output paths, and run the script.
 
